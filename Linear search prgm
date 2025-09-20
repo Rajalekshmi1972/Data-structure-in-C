@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[50], i, n, key, flag = 0;
+
+    printf("Enter the limit of array: ");
+    scanf("%d", &n);
+
+    printf("Enter the array elements:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the key to be searched: ");
+    scanf("%d", &key);
+
+    for(i = 0; i < n; i++)   // FIXED: i<n instead of i<=n
+    {
+        if(a[i] == key)
+        {
+            flag = 1;
+            break;
+        }
+    }
+
+    if(flag == 1)
+    {
+        printf("Search successful. Element found at position %d\n", i+1);
+    }
+    else
+    {
+        printf("Search unsuccessful. Element not found.\n");
+    }
+
+    return 0;
+}
