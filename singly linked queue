@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data;
+struct node*link;
+};
+struct node*head=NULL;
+void enqueue()
+{
+struct node*temp=head,*newnode;
+newnode=(struct node*)malloc(sizeof(struct node));
+if (newnode==NULL){
+printf("/n No space available /n");
+return;
+}
+newnode->link=NULL;
+printf("/n Enterthe element to insert/n");
+scanf("%d", &newnode->data);
+if (head==NULL){
+head=newnode;
+}
+else{
+while(temp->link!=NULL) {
+temp=temp->link;
+}
+temp->liink=newnode;
+}
+printf("/n %d Element inserted succesffuly/n" ,newnode->data);
+}
+void dequeue()
+{
+struct node*temp=head;
+if (head==NULL){
+printf("/n No Elements/n");
+return;
+}
+printf("/n %d IS DELETED /n" ,temp->data);
+head=temp->link;
+free (temp);
+}
+ void display()
+ {
+ struct node*temp=head;
+ if(head==NULL){
+ printf("/n No Elements");
+ return;
+ }
+ printf("/n Elements In Queue Are:/n");
+ while (temp!=NULL){
+ printf("%d" ,temp->data);
+ temp=temp->link;
+ }
+ }
+  void search()
+  {
+  struct node *temp= head;
+  int key,pos=0,found=0;
+  if (head==NULL){
+  printf("/n Queue Empty/n");
+  return;
+  printf("/n Enter the  element to search/n");
+  scanf("%d" &key);
+  while(temp!=NULL){
+  call enqueue()
+  break
+  
