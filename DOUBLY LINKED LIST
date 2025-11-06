@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <malloc.h>
+
+struct node {
+    int data;
+    struct node *Llink;
+    struct node *Rlink;
+};
+
+struct node *head = NULL;
+
+void insertFirst() {
+    struct node *newnode;
+    newnode = (struct node*)malloc(sizeof(struct node));
+
+    if (newnode == NULL) {
+        printf("\n No Space available");
+        return;
+    }
+
+    newnode->Llink = NULL;
+    newnode->Rlink = NULL;
+
+    printf("\n Enter the element to insert");
+    scanf("%d", &newnode->data);
+
+    if (head == NULL) {
+        head = newnode;
+    } else {
+        newnode->Rlink = head;
+        head->Llink = newnode;
+        head = newnode;
+    }
+
+    printf("\n %d inserted sucessfully", newnode->data);
+}
+void insert Last()
+struct node*newnode,*temp=head;
+newnode=(struct node*)malloc(sizeof(struct node));
+if (newnode==NULL)
+{
+printf("\n Error:No  space available for a new node.\n");
+return;
+}
+newnode->Llink = NULL;
+    newnode->Rlink = NULL;
