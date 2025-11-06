@@ -45,3 +45,36 @@ return;
 }
 newnode->Llink = NULL;
     newnode->Rlink = NULL;
+  if (head == NULL) {
+        printf("\n List is empty \n");
+    } else {
+        printf("\n Enter the key after you want to insert the element \n");
+        scanf("%d", &key);
+
+        while (temp != NULL && temp->data != key) {
+            temp = temp->Rlink;
+        }
+
+        if (temp == NULL) {
+            printf("\n NO ELEMENT FOUND \n");
+            return;
+        }
+    }
+
+    printf("\n enter the element to insert \n");
+    scanf("%d", &newnode->data);
+
+    if (temp->Rlink == NULL) {
+        newnode->Llink = temp;
+        newnode->Rlink = NULL;
+        temp->Rlink = newnode;
+    } else {
+        nxt = temp->Rlink;
+        newnode->Llink = temp;
+        newnode->Rlink = nxt;
+        temp->Rlink = newnode;
+        nxt->Llink = newnode;
+    }
+
+    printf("\n %d inserted successfully", newnode->data);
+}
